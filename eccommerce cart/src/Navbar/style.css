@@ -1,0 +1,32 @@
+.navbar{
+    display:flex;
+    justify-content:space-between ;
+    background-color: var(--primarycolor);
+    padding: 0.8rem 2rem;
+}
+.navbar ul{
+    display: flex;
+    font-size: 1.7rem;
+    gap: 2rem;
+}
+.navbar .logo{
+    color:var(--secondarycolor);
+    font-size: 1.4rem;
+
+}
+.logo h2 a:visited{
+    color: var(--secondarycolor);    
+}
+.logo h2 a:active{
+    color:white;    
+}
+.navbar ul li a{
+    color: rgb(255, 255, 255);
+    
+    
+}
+.navbar ul li a:active{
+    color: orange
+    
+    
+}

@@ -1,0 +1,77 @@
+header{
+    background-image: url('https://img.freepik.com/free-psd/black-friday-super-sale-web-banner-template_120329-3859.jpg?semt=ais_hybrid&w=740');
+    height: 90vh;
+    width: 100%;
+    background-size: cover ;
+    background-attachment: scroll;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: center;
+    clip-path: polygon(0 0 ,100% 0,100% 85%,1% 100%);
+    
+}
+.headercontent{
+    margin: 0 auto;
+    
+}
+.headercontent h1{
+    font-size: 2.8rem;
+    color: aliceblue;
+    font-weight: bold;
+    background: rgba(9, 1, 1, 0.8);
+    border-radius: 30px 30px 0 0;
+    padding: 50px 0 0 0;
+
+}
+.headercontent h5{
+    color: aliceblue;
+    font-size: 2.8rem;
+    padding: 2rem 0;
+    text-align: center;
+    background:  rgba(9, 1, 1, 0.8);
+    border-radius: 0 0 30px 30px;
+    padding: 20px 0 50px 0;
+
+    
+}
+.headercontent button{
+        text-align:center;
+        padding:  0.8rem 0.8rem;
+        font-size:1.6rem;
+        margin:0 auto;
+        margin-top:1rem;
+        border: 1px solid var(--secondarycolor);
+       transform: translate();
+        transition: 0.5s ease-in-out;
+        background:var(--secondarycolor);
+        color: white;
+        width: 300px;
+        cursor: pointer;
+        border-radius: 20px;
+
+
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-item{
+    padding:20px 50px;
+    margin: 20px;
+    /* border: 2px solid black; */
+    box-shadow: 0.5px 0.5px 5px black;
+    border-radius: 20px;
+    text-align: center;
+}
+.product-item button{
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(204, 89, 31);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0.5px 0.5px 5px black;
+    margin: 20px 0 0 0 ;
+}
