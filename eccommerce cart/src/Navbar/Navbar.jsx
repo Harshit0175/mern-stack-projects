@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import "./style.css";
 import { Link } from 'react-router-dom';
+import { createcontext } from '../shop/Cartcontext'
 
 function Navbar() {
+
+  const {cart } = useContext(createcontext);
+
   return (
     <div className='container-fluid'>
         <div className='navbar'>
@@ -12,7 +16,7 @@ function Navbar() {
         
         <div className='nav'>
             <ul className='nav-list'>
-                <li className='navlink'><Link to='/cart-page'>Cart<sup>{'3'}</sup></Link></li>
+                <li className='navlink'><Link to='/cart-page'>Cart<sup>{cart.length}</sup></Link></li>
             </ul>
         </div>
         </div>

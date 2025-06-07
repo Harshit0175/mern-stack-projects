@@ -1,5 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import './style.css'
+import Cartlist from '../shop/Cartlist'
+import { createcontext } from '../shop/Cartcontext'
+
 
 function Home() {
   const [product, setproduct] = useState(
@@ -245,8 +248,18 @@ function Home() {
     }
   }
 ])
+const { setcart,cart } = useContext(createcontext);
+function addtocart(data) {
+ console.log(data)
+ setcart([...cart,{...data , Quantity:1}])
+
+  
+}
+
   return (
     <>
+    
+    
     <header>
       <div className='container'>
         <div className='headercontent'>
@@ -266,12 +279,13 @@ function Home() {
                 {/* <p>{productitem.description}</p> */}
                 <p>{productitem.price}</p>
                 <p>Rate:{productitem.rating.rate} |  Rating count:{productitem.rating.count}</p>
-                <button>Add To Cart</button>
+                <button onClick={()=>{addtocart(productitem)}}>Add To Cart</button>
                </div>
               </div>
             )
           })}
           </div>
+         
     </>
   )
 }

@@ -5,8 +5,9 @@ import './App.css'
 import Navbar from './Navbar/Navbar'
 import { Routes,Route } from 'react-router'
 import Home from './components/Home'
-import Cartpage from './shop/Cartpage'
-import { CartProvider } from './shop/Cartcontext'
+import Cartlist from './shop/Cartlist'
+import { Cartprovider } from './shop/Cartcontext'
+
 
 
 
@@ -14,16 +15,16 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <CartProvider>
+    <Cartprovider>
     
       <Navbar/>
       <Routes>
         <Route path='/' Component={Home}/>
-        <Route path='/cart-page' Component={Cartpage}/>
+        <Route path='/cart-page' Component={Cartlist} />
 
       </Routes>
 
-    </CartProvider>
+    </Cartprovider>
   )
 }
 
