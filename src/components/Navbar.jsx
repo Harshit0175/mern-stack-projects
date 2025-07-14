@@ -1,5 +1,5 @@
 import React, { useContext,useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'+
 import { assets } from '../assets/assets';
 import { Appcontext } from '../context/Appcontext';
 
@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
 
-            <Link to="/"><img width={150} src={assets.logo} /></Link>
+            <Link to="/"><img width={150} className='h-15' src={assets.job1} /></Link>
 
             {/* Desktop Menu */}
             <div className="hidden sm:flex items-center gap-8 ">
@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
 
-                <button onClick={() => navigate('/login')} className="cursor-pointer px-8 py-2 bg-primary active:bg-black transition text-white rounded-full">
+                <button onClick={() => navigate('/login')} className="cursor-pointer px-8 py-2 bg-sky-600 text-white rounded-full">
                     Login
                 </button>
             </div>

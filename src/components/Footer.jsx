@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <div>
       
-        <footer className=" bg-[#0a65cc] px-6 pt-8 md:px-16 lg:px-36 w-full text-white">
+        <footer className=" bg-sky-700 px-6 pt-8 md:px-16 lg:px-36 w-full text-white">
             <div className=" flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500 pb-10">
                 <div className="md:max-w-96">
-                    <img alt="" className="h-11 bg-white rounded-xl" src={assets.logo} />
+                    <img alt="" className="h-16 w-30 bg-white rounded-xl py-1  " src={assets.job1} />
                     <p className="mt-6 text-sm">
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </p>
@@ -37,7 +37,7 @@ const Footer = () => {
                 </div>
             </div>
             <p className="pt-4 text-center text-sm pb-5">
-                Copyright {new Date().getFullYear()} © PreBuiltUI. All Right Reserved.
+                Copyright {new Date().getFullYear()} © Job Finder. All Right Reserved.
             </p>
         </footer>
       

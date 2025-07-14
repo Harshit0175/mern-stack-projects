@@ -19,7 +19,8 @@ import search_icon from "./search_icon.png";
 import user_profile from "./user_profile.png";
 import video_icon from "./video_icon.png";
 import save_later_icon from "./save_later_icon.png";
-import jobportal from "./jobportal.png";
+import job1 from "./job1.png";
+
 
 export const assets = {
   logo,
@@ -28,7 +29,9 @@ export const assets = {
   user_profile,
   google_icon,
   facebook_icon,
-  jobportal,
+  job1,
+  
+  
 };
 export const companies = [
   {
@@ -56,7 +59,7 @@ export const heroData = [
   },
   {
     _id: 2,
-    icon: mobile_icon,
+    icon : mobile_icon,
     count: "24k",
     title: "Companies",
   },
