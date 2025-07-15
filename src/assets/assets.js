@@ -20,6 +20,7 @@ import user_profile from "./user_profile.png";
 import video_icon from "./video_icon.png";
 import save_later_icon from "./save_later_icon.png";
 import job1 from "./job1.png";
+import job from "./job.png";
 
 
 export const assets = {
@@ -30,6 +31,7 @@ export const assets = {
   google_icon,
   facebook_icon,
   job1,
+  job,
   
   
 };

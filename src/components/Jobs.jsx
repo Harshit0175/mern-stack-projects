@@ -1,5 +1,6 @@
 import React,{useContext} from 'react'
 import { Appcontext } from '../context/Appcontext';
+import Jobcard from './Jobcard';
 
 
 const Jobs = () => {
@@ -8,18 +9,11 @@ const Jobs = () => {
   return (
     <div className='py-16 '>
       <h1 className='text-2xl md:text-5xl font-semibold text-gray-800 text-center'>Featured Jobs</h1>
-      <div>
+      <div className='my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-center items-center'>
         {jobdata.map((item,idx)=>{
             return(
-                <div key={idx} className=''>
-                    <img src={item.image} alt="" />
-                    <h3>{item.title}</h3>
-                    <h4>{item.company}</h4>
-                    <p>{item.description}</p>
-                    <p>{item.location}</p>
-                    <p>{item.salary}</p>    
+              <Jobcard key={idx} item={item} />
 
-                </div>
             )
         })}
       </div>

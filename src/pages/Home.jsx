@@ -4,6 +4,7 @@ import Vacancies from '../components/Vacancies'
 import Howworks from '../components/Howworks'
 import Mostpopular from '../components/Mostpopular'
 import Jobs from '../components/Jobs'
+import Testimonial from '../components/Testimonial'
     
     const Home = () => {
 
@@ -14,7 +15,7 @@ import Jobs from '../components/Jobs'
          <Howworks/>
          <Mostpopular/>
          <Jobs/>
-          
+          <Testimonial/>
         </div>
       )
     }
