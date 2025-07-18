@@ -178,7 +178,7 @@ export const jobs = [
   {
     _id: 1,
     title: "Data Scientist",
-    company: "ABC Company",
+    company: " at ABC Company",
     description:
       "We are looking for a talented data scientist to join our team.",
     location: "New York, USA",

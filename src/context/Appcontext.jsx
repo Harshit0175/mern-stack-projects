@@ -11,6 +11,7 @@ const Appprovider = ({ children }) => {
     const  [employer, setemployer] = useState(false)
     const [admin,setadmin]=useState(false)
      const [categoriesdata, setcategoriesdata] = useState([]);
+     const [query, setquery] = useState("");
     const fetchcategories=()=>{
         setcategoriesdata(categories);
     }
@@ -27,7 +28,7 @@ const Appprovider = ({ children }) => {
     }, [])
 
 
-    const value = { navigate, user, setuser, employer, setemployer, admin, setadmin, categoriesdata,jobdata };
+    const value = { navigate, user, setuser, employer, setemployer, admin, setadmin, categoriesdata,jobdata,query, setquery};
 
     return (
         <Appcontext.Provider value={value}>{children}</Appcontext.Provider>

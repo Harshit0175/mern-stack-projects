@@ -6,7 +6,7 @@ const Jobcard = ({ item }) => {
     const { navigate } = useContext(Appcontext);
 
   return (
-    <div onClick={() => navigate(`/job/${item._id}`)} className='cursor-pointer p-5 flex flex-col gap-2 border border-gray-300 rounded-xl w-auto lg:w-[424px] bg-gradient-to-r from-purple-200/80 mx-6 '>
+    <div onClick={() => navigate(`/job-details/${item._id}`)} className='cursor-pointer p-5 flex flex-col gap-2 border border-gray-300 rounded-xl w-auto lg:w-[424px] bg-gradient-to-r from-purple-200/80 mx-6 '>
         <h1 className='text-2xl font-medium text-gray-800'>{item.title}</h1>
         <div className='flex  gap-4'>
       <p className='text-sm bg-green-300/40 p-1'>{item.type}</p>
