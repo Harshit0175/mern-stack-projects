@@ -11,6 +11,7 @@ import google_icon from "./google_icon.png";
 import graphic_icon from "./graphic_icon.png";
 import hero_img from "./hero_img.png";
 import upload_icon from "./upload_icon.png";
+
 import user_img from "./user_img.png";
 import mobile_icon from "./mobile_icon.png";
 import music_icon from "./music_icon.png";
@@ -132,7 +133,7 @@ export const vacancies = [
   },
 ];
 
-export const howWorks = [
+export const HowWorks = [
   {
     _id: 1,
     icon: user_img,

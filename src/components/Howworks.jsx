@@ -1,5 +1,5 @@
 import React from 'react'
-import { howWorks } from '../assets/assets'
+import { HowWorks } from '../assets/assets.js'
 
 const Howworks = () => {
     return (
@@ -8,10 +8,10 @@ const Howworks = () => {
                 How It Works
             </h1>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 items-center justify-center'>
-                {howWorks.map((item, index) => {
+                {HowWorks.map((item, index) => {
                     return(
                         <div key={index} className='flex flex-col items-center justify-between gap-4'>
-                            <img src={item.icon} className=''/>
+                            <img src={item.icon} />
                            <div className='flex flex-col items-center justify-center '>
                             <h4>{item.title}</h4>
                             <p>{item.desc}</p>
