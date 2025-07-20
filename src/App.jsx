@@ -8,6 +8,7 @@ import Sign from './pages/auth/Sign'
 import Logins from './pages/auth/Logins'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { Toaster} from 'react-hot-toast'
 const App = () => {
   let adminpath=useLocation().pathname.includes('admin')
   let employerpath=useLocation().pathname.includes('employer')
@@ -25,6 +26,7 @@ const App = () => {
        </Routes>
        
   {adminpath||employerpath?null:<Footer/> }
+  <Toaster/>
 
     </div>
   )

@@ -2,10 +2,12 @@ import React, { useContext,useState } from 'react'
 import { Link } from 'react-router-dom' ; 
 import { assets } from '../assets/assets';
 import { Appcontext } from '../context/Appcontext';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
-    const { navigate,setquery} = useContext(Appcontext)
+    const { navigate,setquery,user,setuser} = useContext(Appcontext)
     const [open, setOpen] = useState(false)
+    const [isOpen, setisOpen] = useState(false)
     const [input, setinput] = useState('')
     const handlesearch=(e)=>{
         if(e.key=='Enter'&& input.trim()!==""){
@@ -14,6 +16,11 @@ const Navbar = () => {
             setinput('');
             
         }
+    }
+    const logout=()=>{
+        setuser(false);
+        navigate('/');
+        toast.success("Logout successfully")
     }
     return (
         <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
@@ -38,9 +45,23 @@ const Navbar = () => {
                     </svg>
                 </div>
 
-                <button onClick={() => navigate('/login')} className="cursor-pointer px-8 py-2 bg-sky-600 text-white rounded-full">
+                {user?(<div className='relative inline-block' 
+                onMouseEnter={()=>{
+                    setisOpen(true);
+                }} onMouseLeave={()=>{
+                    setisOpen(false)
+                }}>
+                    <img src={assets.user_profile} alt="" className='w-12 h-12 rounded-full cursor-pointer border border-gray-300 ' />
+                    {isOpen&&(<div className='absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-35 z-50'> 
+                        <p  onClick={() => navigate('/my-application')} className='px-4 py-2 hover:bg-gray-200 cursor-pointer text-center'>My Application</p>
+                        <p  onClick={() => navigate('/my-profile')} className='px-4 py-2 hover:bg-gray-200 cursor-pointer text-center'>My Profile</p>
+                        <p  onClick={logout} className='px-4 py-2 hover:bg-red-500 cursor-pointer text-center '>Logout</p>
+
+                    </div>)}
+                </div>):
+                (<button onClick={() => navigate('/login')} className="cursor-pointer px-8 py-2 bg-sky-600 text-white rounded-full">
                     Login
-                </button>
+                </button>)}
             </div>
 
             <button onClick={() => open ? setOpen(false) : setOpen(true)} aria-label="Menu" className="sm:hidden">

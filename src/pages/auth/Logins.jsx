@@ -1,7 +1,10 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import { Link } from 'react-router-dom'
+import { Appcontext } from '../../context/Appcontext'
 
 const Logins = () => {
+  const {navigate,setuser} = useContext(Appcontext)
+   
   const  [formdata, setformdata] = useState({
     email:'',
     password:'',
@@ -12,7 +15,10 @@ const Logins = () => {
   }
   const handlesubmit=async(e)=>{
     e.preventDefault()
-    console.log('formdata',formdata);
+    setuser(true)
+    navigate('/')
+
+  
     
 
     
@@ -27,8 +33,8 @@ const Logins = () => {
         <input  className="w-full border my-3 border-gray-500/30 outline-none rounded-full py-2.5 px-4" type="email" name='email' value={formdata.email} onChange={handlechange}  placeholder="Enter your email" required />
         <input  className="w-full border mt-1 border-gray-500/30 outline-none rounded-full py-2.5 px-4 mx-auto" type="password" 
         name='password' value={formdata.password} onChange={handlechange} placeholder="Enter your password" required />
-       
-        <button type="submit" className="w-full my-3 bg-primary active:bg-black transition py-2.5 rounded-full text-white">Log in</button>
+
+        <button type="submit" className="w-full my-3 bg-sky-600 active:bg-black transition py-2.5 rounded-full text-white">Log in</button>
         <p className="text-center mt-4">Don’t have an account? <Link to='/sign-up' className="text-blue-500 underline">Signup Now</Link></p>
       </form>
 

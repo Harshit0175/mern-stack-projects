@@ -3,10 +3,11 @@ import { Appcontext } from '../context/Appcontext'
 
 import { useParams } from 'react-router-dom'
 import { assets } from '../assets/assets'
+import toast from 'react-hot-toast'
 
 const Jobdetails = () => {
 
-  const { jobdata } = useContext(Appcontext)
+  const { jobdata ,isJobapplied, setisJobapplied , savedjobs, jobsaved } = useContext(Appcontext)
   const { id } = useParams();
   const job = jobdata.find((jobs) => jobs._id === parseInt(id))
   console.log(job)
@@ -65,12 +66,14 @@ const Jobdetails = () => {
           {/* right section */}
 
           <div className='flex flex-col' >
-            <div className='flex gap-4'>
-              <div>
+            <div className='flex gap-4' >
+              <div onClick={() => jobsaved(job)}>
                 <img src={assets.save_later_icon} alt="" className='cursor-pointer' />
               </div>
-              <button className=' cursor-pointer px-10 py-1 bg-sky-600 transition text-white rounded-full'>
-                Apply Now
+              <button onClick={() =>{ setisJobapplied(!isJobapplied);
+              toast.success("Job Applied");
+              }} disabled={isJobapplied} className={`cursor-pointer px-10 py-1 bg-sky-600 transition text-white rounded-full ${isJobapplied ? "opacity-50" : "hover:bg-sky-600"}`}>
+                {isJobapplied ? "Applied" : "Apply Now"}
               </button>
             </div>
             <div className='my-5 flex flex-wrap  gap-3 border border-gray-300 p-4 '>
