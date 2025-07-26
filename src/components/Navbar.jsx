@@ -53,9 +53,9 @@ const Navbar = () => {
                 }}>
                     <img src={assets.user_profile} alt="" className='w-12 h-12 rounded-full cursor-pointer border border-gray-300 ' />
                     {isOpen&&(<div className='absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-35 z-50'> 
-                        <p  onClick={() => navigate('/my-application')} className='px-4 py-2 hover:bg-gray-200 cursor-pointer text-center'>My Application</p>
-                        <p  onClick={() => navigate('/my-profile')} className='px-4 py-2 hover:bg-gray-200 cursor-pointer text-center'>My Profile</p>
-                        <p  onClick={logout} className='px-4 py-2 hover:bg-red-500 cursor-pointer text-center '>Logout</p>
+                        <p  onClick={() => navigate('/my-application')} className='px-4 py-2 hover:bg-gray-200 cursor-pointer '>My Application</p>
+                        <p  onClick={() => navigate('/profile')} className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>My Profile</p>
+                        <p  onClick={logout} className='px-4 py-2 hover:bg-red-500 cursor-pointer'>Logout</p>
 
                     </div>)}
                 </div>):

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { categories } from "../assets/assets";
 import { jobs } from "../assets/assets";
 import toast from "react-hot-toast";
+import { companies } from "../assets/assets";
+
 
 const Appcontext = createContext();
 
@@ -15,11 +17,17 @@ const Appprovider = ({ children }) => {
      const [query, setquery] = useState("");
      const [isJobapplied, setisJobapplied] = useState(false);
      const [savedjobs, setsavedjobs] = useState([]);
+     const [companydata, setcompanydata] = useState([])
+     const fetchcompanies=()=>{
+        setcompanydata(companies)
+     }
     const fetchcategories=()=>{
         setcategoriesdata(categories);
     }
     useEffect(() => {
         fetchcategories();
+         fetchjobs();
+         fetchcompanies();
 
     }, [])
  
@@ -43,12 +51,10 @@ const Appprovider = ({ children }) => {
     const fetchjobs = () => {
         setJobdata(jobs);
     }
-    useEffect(() => {
-     fetchjobs()
-    }, [])
+   
 
 
-    const value = { navigate, user, setuser, employer, setemployer, admin, setadmin, categoriesdata,jobdata,query, setquery , isJobapplied, setisJobapplied, savedjobs, jobsaved };
+    const value = { navigate, user, setuser, employer, setemployer, admin, setadmin, categoriesdata,jobdata,query, setquery , isJobapplied, setisJobapplied, savedjobs, jobsaved, companydata,setcompanydata };
 
     return (
         <Appcontext.Provider value={value}>{children}</Appcontext.Provider>
