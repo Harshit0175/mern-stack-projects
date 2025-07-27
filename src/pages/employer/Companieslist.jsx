@@ -3,7 +3,7 @@ import { Appcontext } from '../../context/Appcontext'
 import toast from 'react-hot-toast';
 
 
-const Companieslist = () => {
+const Companieslist = ({companies}) => {
   const { companydata, setcompanydata, navigate } = useContext(Appcontext);
   const handledelete = (id) => {
     const updatedcompanies = companydata.filter((company) => {
