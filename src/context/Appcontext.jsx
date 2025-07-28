@@ -4,6 +4,7 @@ import { categories } from "../assets/assets";
 import { jobs } from "../assets/assets";
 import toast from "react-hot-toast";
 import { companies } from "../assets/assets";
+import { applicants } from "../assets/assets";
 
 
 const Appcontext = createContext();
@@ -17,7 +18,11 @@ const Appprovider = ({ children }) => {
      const [query, setquery] = useState("");
      const [isJobapplied, setisJobapplied] = useState(false);
      const [savedjobs, setsavedjobs] = useState([]);
-     const [companydata, setcompanydata] = useState([])
+     const [companydata, setcompanydata] = useState([]);
+     const [applicant, setapplicant] = useState([]);
+     const jobapplications=()=>{
+        setapplicant(applicants)
+     }
      const fetchcompanies=()=>{
         setcompanydata(companies)
      }
@@ -28,6 +33,7 @@ const Appprovider = ({ children }) => {
         fetchcategories();
          fetchjobs();
          fetchcompanies();
+         jobapplications();
 
     }, [])
  
@@ -54,7 +60,7 @@ const Appprovider = ({ children }) => {
    
 
 
-    const value = { navigate, user, setuser, employer, setemployer, admin, setadmin, categoriesdata,jobdata,query, setquery , isJobapplied, setisJobapplied, savedjobs, jobsaved, companydata,setcompanydata };
+    const value = { navigate, user, setuser, employer, setemployer, admin, setadmin, categoriesdata,jobdata,query, setquery , isJobapplied, setisJobapplied, savedjobs, jobsaved, companydata,setcompanydata ,applicant  };
 
     return (
         <Appcontext.Provider value={value}>{children}</Appcontext.Provider>
