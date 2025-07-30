@@ -26,7 +26,7 @@ const Mostpopular = () => {
                     const colors = tailwindColors[index % tailwindColors.length]
 
                     return (
-                        <div key={index} className={` cursor-pointer flex  max-w-[250px] items-center justify-center gap-2 border border-gray-300 rounded-xl my-4 mx-10 py-6 px-4 drop-shadow ${colors} `}>
+                        <div key={index} className={` flex  max-w-[250px] items-center justify-center gap-2 border border-gray-300 rounded-xl my-4 mx-10 py-6 px-4 drop-shadow ${colors} `}>
                             <img src={item.icon} />
                             <div className='flex flex-col items-center justify-center'><h1>{item.name}</h1>
                                 <p>{item.positions} open positions</p>

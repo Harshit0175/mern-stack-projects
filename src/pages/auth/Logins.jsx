@@ -4,7 +4,7 @@ import { Appcontext } from '../../context/Appcontext'
 import toast from 'react-hot-toast'
 
 const Logins = () => {
-  const { navigate, setuser, setemployer } = useContext(Appcontext)
+  const { navigate, setuser, setemployer,setadmin } = useContext(Appcontext)
 
   const [formdata, setformdata] = useState({
     email: '',
@@ -20,6 +20,12 @@ const Logins = () => {
       setemployer(true)
       navigate('/employer')
       toast.success('login sucessfully')
+    }
+    else if (formdata.email==='admin@gmail.com' && formdata.password==='123456') {
+      setadmin(true)
+      navigate('/admin')
+      toast.success('admin login sucessfully')
+      
     }
     else {
       setuser(true)

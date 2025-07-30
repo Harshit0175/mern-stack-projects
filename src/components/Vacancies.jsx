@@ -25,7 +25,7 @@ const Vacancies = () => {
                 {vacancies.map((item,index)=>{
                   const colors=tailwindColors[index%tailwindColors.length]
                     return(
-                        <div key={index} className={` cursor-pointer flex flex-col max-w-[250px] items-center justify-center gap-1 border border-gray-300 rounded-xl  my-4 mx-10 py-6 px-4 drop-shadow text-${colors} ${colors}`}>
+                        <div key={index} className={`flex flex-col max-w-[250px] items-center justify-center gap-1 border border-gray-300 rounded-xl  my-4 mx-10 py-6 px-4 drop-shadow text-${colors} ${colors}`}>
                             <h3 className='text-lg font-semibold'>{item.title}</h3>
                             <p className='text-sm'>{item.count} open position</p>
                             

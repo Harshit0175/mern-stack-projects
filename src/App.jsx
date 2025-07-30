@@ -17,6 +17,13 @@ import Addcompany from './pages/employer/Addcompany'
 import Postjobs from './pages/employer/Postjobs'
 import Jobslist from './pages/employer/Jobslist'
 import Applicants from './pages/employer/Applicants'
+import Adminlayout from './pages/Admin/Adminlayout'
+import Categorieslist from './pages/Admin/Categorieslist'
+import Addcategory from './pages/Admin/Addcategory'
+import Allcompany from './pages/Admin/Allcompany'
+import Allapplications from './pages/Admin/Allapplications'
+import Allusers from './pages/Admin/Allusers'
+import Jobs from './pages/Admin/Jobs'
 const App = () => {
   let adminpath = useLocation().pathname.includes('admin')
   let employerpath = useLocation().pathname.includes('employer')
@@ -38,11 +45,22 @@ const App = () => {
         {/* Employer Routes */}
         <Route path='/employer' element={<Employerlayout />}>
           <Route index element={<Companieslist />} />
-            <Route index element={<Companieslist />} />
+
             <Route path="add-company" element={<Addcompany />} />
             <Route path="post-jobs" element={<Postjobs />} />
             <Route path="job-list" element={<Jobslist />} />
             <Route path="applicants" element={<Applicants />} />
+          </Route>
+          {/* admin routes */}
+          <Route path='/admin' element={<Adminlayout />}>
+          <Route index element={<Categorieslist />} />
+
+            <Route path="add-category" element={<Addcategory />} />
+            <Route path="all-companies" element={<Allcompany />} />
+            <Route path="all-applications" element={<Allapplications />} />
+            <Route path="all-users" element={<Allusers />} />
+            <Route path="jobs" element={<Jobs />} />
+
           </Route>
 
 
