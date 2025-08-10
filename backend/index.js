@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv  from "dotenv";
 import { connectdb } from "./config/connectdb.js";
+import authrouter from "./routes/authroutes.js";
 
 dotenv.config();
 const app=express();
@@ -18,6 +19,7 @@ connectdb();
 app.get('/',(req,res)=>{
     res.send('hello')
 })
+app.use('/auth',authrouter);
 const port=process.env.port||5000;
 
 app.listen(port,()=>{
