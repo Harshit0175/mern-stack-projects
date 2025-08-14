@@ -4,7 +4,7 @@ import { Appcontext } from '../../context/Appcontext'
 import toast from 'react-hot-toast'
 
 const Sign = () => {
-    const {navigate,axios} = useContext(Appcontext)
+    const { navigate, axios } = useContext(Appcontext)
     const [file, setFile] = useState(null)
     const [preview, setpreview] = useState(null)
     const [formdata, setformdata] = useState({
@@ -32,32 +32,31 @@ const Sign = () => {
     }
     const handlesubmit = async (e) => {
         e.preventDefault()
-       try {
-         const formpayload= new formdata();
-       formpayload.append('name',formdata.name)
-       formpayload.append('email',formdata.email)
-       formpayload.append('password',formdata.password)
-       formpayload.append('role',formdata.role)
-       formpayload.append('image',formdata.image)
-    //    const response=await axios.post('/user/signup',data)
-    //    toast.success(response.data.message);
-    //    navigate('/login');  
-    const {data}=await axios.post('http://localhost:4000/auth/signup',formpayload,{
-        header:{
-            'content-type':"multipart/form-data",
-        },
-    });
-    if(data.success){
-        toast.success(data.message);
-       navigate('/login');      
-    }
-    else{
-        toast.error(data.message)
-    } 
-       } catch (error) {
-        toast.error(error.response.data.message)
-       }
-      
+        try {
+            const formpayload = new FormData();
+            formpayload.append('name', formdata.name)
+            formpayload.append('email', formdata.email)
+            formpayload.append('password', formdata.password)
+            formpayload.append('role', formdata.role)
+            formpayload.append('image', formdata.image)
+            //    const response=await axios.post('/user/signup',data)
+            //    toast.success(response.data.message);
+            //    navigate('/login');  
+            const data  = await axios.post('http://localhost:4000/auth/signup', formpayload, {
+                header: {
+                    'content-type': "multipart/form-data",
+                },
+            });
+            if (data.success) {
+                toast.success(data.message);
+                navigate('/login');
+            } else {
+                toast.error(res.data.message);
+
+            }
+        } catch (error) {
+            toast.error(error.response.data.message)
+        }
 
 
 
@@ -75,7 +74,7 @@ const Sign = () => {
                             <img src={preview} alt="Preview" className='w-24 h-24 rounded-full border-shadow' />
 
                         </div>
-                        )}
+                    )}
                     <input type='file' accept='image/*' onChange={handlefilechanges} className='w-full border my-3 border-gray-500/30 outline-none rounded-full py-2.5 px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer' />
 
                 </div>

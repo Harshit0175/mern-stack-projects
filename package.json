@@ -1,6 +1,16 @@
-{
-  "dependencies": {
+
+ { "name": "mern-stack-projects",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server --prefix backend\" \"npm run server --prefix frontend\""
+  },
+
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+
+  "dependencies" : {
     "axios": "^1.11.0",
     "react-hot-toast": "^2.5.2"
-  }
-}
+  }}
